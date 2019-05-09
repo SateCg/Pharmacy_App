@@ -24,6 +24,7 @@ namespace Pharmacy_App
         int medicineNumber;
 
         List<medicineRecords> medicineRecordList = new List<medicineRecords>();
+        List<medicineRecords> temporaryMedicineRecord = new List<medicineRecords>();
         string xmlFileLocation = @"C:/Users/Public/PharmacyAppData/medicineInfo.xml";
         string imageFolderPath = @"C:/Users/Public/PharmacyAppData/Images";// folder for images
 
@@ -273,7 +274,7 @@ namespace Pharmacy_App
             int amount = 0;
             string errorMessage = "";
             bool validation = true;
-
+            var x = medicineRecordList.ElementAt(0);
             if(pictureBoxImage.Image == null)
             {
                 MessageBox.Show("Please select a medicine", "medicine selection confirm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -358,12 +359,31 @@ namespace Pharmacy_App
                 {
                     for (int i = 0; i < medicineRecordList.Count; i++)
                     {
+                        if (medicineRecordList[i].name == xmlName &&
+                            medicineRecordList[i].price == xmlPrice &&
+                            medicineRecordList[i].cost == xmlCost &&
+                            medicineRecordList[i].amount == xmlAmount &&
+                            medicineRecordList[i].category == xmlCategory &&
+                            medicineRecordList[i].mg == xmlMg &&
+                            medicineRecordList[i].experationDate == xmlExperationDate &&
+                            medicineRecordList[i].status == xmlStatus)
+                        {
+                            x = medicineRecordList.ElementAt(i);
+                            medicineRecordList.RemoveAt(i);
+                        }
+                        else
+                        {/*doNothing*/}
+                    }
+
+                    for (int i = 0; i < medicineRecordList.Count; i++)
+                    {
                         if (medicineRecordList[i].name == name &&
                             medicineRecordList[i].category == category &&
                             medicineRecordList[i].mg == mg &&
                             medicineRecordList[i].experationDate == experationDate)
                         {
-                            MessageBox.Show("This medicine is already entered", "medicine control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("New informations overlaps with a medicine", "medicine control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            medicineRecordList.Add(x);
                             validation = false;
                             break;
                         }
@@ -394,7 +414,7 @@ namespace Pharmacy_App
                             xmlExperationDate +
                             " " +
                             xmlStatus +
-                            "\nDo you want to continue to update ?", "updated check", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            "\nDo you want to continue to update this medicine  ?", "updated check", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         //sql*update
                         conn.Open();
@@ -426,7 +446,8 @@ namespace Pharmacy_App
 
                         }
 
-                        medicineDoc.Save(@xmlFileLocation);
+                        medicineDoc.Save(xmlFileLocation);
+
 
                         textBoxName.Text = "";
                         textBoxAmount.Text = "";
