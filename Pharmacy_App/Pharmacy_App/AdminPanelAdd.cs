@@ -137,6 +137,53 @@ namespace Pharmacy_App
                 row.SubItems.Add(itms9);
 
                 listViewMedicines.Items.Add(row);
+
+
+            }
+
+
+            // Adding colums to the list view
+
+            listViewTemporaryMedicines.Columns.Add(" ", 25, HorizontalAlignment.Center);
+            listViewTemporaryMedicines.Columns.Add("Name", 120, HorizontalAlignment.Left);
+            listViewTemporaryMedicines.Columns.Add("Category", 100, HorizontalAlignment.Center);
+            listViewTemporaryMedicines.Columns.Add("Mg", 50, HorizontalAlignment.Center);
+            listViewTemporaryMedicines.Columns.Add("Expiration Date", 150, HorizontalAlignment.Center);
+            listViewTemporaryMedicines.Columns.Add("Amount", 50, HorizontalAlignment.Center);
+            listViewTemporaryMedicines.Columns.Add("Cost", 50, HorizontalAlignment.Center);
+            listViewTemporaryMedicines.Columns.Add("Price", 50, HorizontalAlignment.Center);
+            listViewTemporaryMedicines.Columns.Add("Status", 70, HorizontalAlignment.Center);
+            listViewTemporaryMedicines.Columns.Add("Upload Date", 150, HorizontalAlignment.Center);
+
+            //------------------------------
+
+            for (var i = 0; i < temporaryMedicineRecordList.Count; i++)// Adding temporaryMedicineRecors list's elements to the list view 
+            {
+
+                ListViewItem row = new ListViewItem((i + 1).ToString());
+
+                ListViewItem.ListViewSubItem itms1 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].name.ToString());
+                ListViewItem.ListViewSubItem itms8 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].category.ToString());
+                ListViewItem.ListViewSubItem itms2 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].mg.ToString());
+                ListViewItem.ListViewSubItem itms3 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].experationDate.ToString());
+                ListViewItem.ListViewSubItem itms4 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].amount.ToString());
+                ListViewItem.ListViewSubItem itms5 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].cost.ToString());
+                ListViewItem.ListViewSubItem itms6 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].price.ToString());
+                ListViewItem.ListViewSubItem itms7 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].status.ToString());
+                ListViewItem.ListViewSubItem itms9 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].updatedDate.ToString());
+
+
+                row.SubItems.Add(itms1);
+                row.SubItems.Add(itms8);
+                row.SubItems.Add(itms2);
+                row.SubItems.Add(itms3);
+                row.SubItems.Add(itms4);
+                row.SubItems.Add(itms5);
+                row.SubItems.Add(itms6);
+                row.SubItems.Add(itms7);
+                row.SubItems.Add(itms9);
+
+                listViewTemporaryMedicines.Items.Add(row);
             }
 
         }
@@ -309,22 +356,6 @@ namespace Pharmacy_App
                     conn.Close();
                     //*sql
 
-                    Form_Reload(sender, e);
-
-                    // Adding colums to the list view
-
-                    listViewTemporaryMedicines.Columns.Add(" ", 25, HorizontalAlignment.Center);
-                    listViewTemporaryMedicines.Columns.Add("Name", 120, HorizontalAlignment.Left);
-                    listViewTemporaryMedicines.Columns.Add("Category", 100, HorizontalAlignment.Center);
-                    listViewTemporaryMedicines.Columns.Add("Mg", 50, HorizontalAlignment.Center);
-                    listViewTemporaryMedicines.Columns.Add("Expiration Date", 150, HorizontalAlignment.Center);
-                    listViewTemporaryMedicines.Columns.Add("Amount", 50, HorizontalAlignment.Center);
-                    listViewTemporaryMedicines.Columns.Add("Cost", 50, HorizontalAlignment.Center);
-                    listViewTemporaryMedicines.Columns.Add("Price", 50, HorizontalAlignment.Center);
-                    listViewTemporaryMedicines.Columns.Add("Status", 70, HorizontalAlignment.Center);
-                    listViewTemporaryMedicines.Columns.Add("Upload Date", 150, HorizontalAlignment.Center);
-
-                    //------------------------------
 
                     temporaryMedicineRecordList.Add(new medicineRecords // adding new item to temporary list.
                     {
@@ -341,34 +372,7 @@ namespace Pharmacy_App
 
                     });
 
-                    for (var i = 0; i < temporaryMedicineRecordList.Count; i++)// Adding temporaryMedicineRecors list's elements to the list view 
-                    {
-
-                        ListViewItem row = new ListViewItem((i + 1).ToString());
-
-                        ListViewItem.ListViewSubItem itms1 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].name.ToString());
-                        ListViewItem.ListViewSubItem itms8 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].category.ToString());
-                        ListViewItem.ListViewSubItem itms2 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].mg.ToString());
-                        ListViewItem.ListViewSubItem itms3 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].experationDate.ToString());
-                        ListViewItem.ListViewSubItem itms4 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].amount.ToString());
-                        ListViewItem.ListViewSubItem itms5 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].cost.ToString());
-                        ListViewItem.ListViewSubItem itms6 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].price.ToString());
-                        ListViewItem.ListViewSubItem itms7 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].status.ToString());
-                        ListViewItem.ListViewSubItem itms9 = new ListViewItem.ListViewSubItem(row, temporaryMedicineRecordList[i].updatedDate.ToString());
-
-
-                        row.SubItems.Add(itms1);
-                        row.SubItems.Add(itms8);
-                        row.SubItems.Add(itms2);
-                        row.SubItems.Add(itms3);
-                        row.SubItems.Add(itms4);
-                        row.SubItems.Add(itms5);
-                        row.SubItems.Add(itms6);
-                        row.SubItems.Add(itms7);
-                        row.SubItems.Add(itms9);
-
-                        listViewTemporaryMedicines.Items.Add(row);
-                    }
+                    
 
                     var doc = XDocument.Load(@xmlFileLocation); //opening xml file
 
