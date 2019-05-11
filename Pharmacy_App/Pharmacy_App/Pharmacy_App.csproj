@@ -102,6 +102,12 @@
     </Compile>
     <Compile Include="adminsRecords.cs" />
     <Compile Include="customerRecords.cs" />
+    <Compile Include="employeChooseMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employeChooseMedicine.Designer.cs">
+      <DependentUpon>employeChooseMedicine.cs</DependentUpon>
+    </Compile>
     <Compile Include="employeHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanelUpdate.resx">
       <DependentUpon>AdminPanelUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employeChooseMedicine.resx">
+      <DependentUpon>employeChooseMedicine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="employeHistory.resx">
       <DependentUpon>employeHistory.cs</DependentUpon>

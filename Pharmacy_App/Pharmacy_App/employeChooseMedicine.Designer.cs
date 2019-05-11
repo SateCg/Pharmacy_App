@@ -1,6 +1,6 @@
 ﻿namespace Pharmacy_App
 {
-    partial class employeHistory
+    partial class employeChooseMedicine
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listViewHistory = new System.Windows.Forms.ListView();
+            this.listViewMedicines = new System.Windows.Forms.ListView();
             this.buttonReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listViewHistory
+            // listViewMedicines
             // 
-            this.listViewHistory.GridLines = true;
-            this.listViewHistory.Location = new System.Drawing.Point(12, 42);
-            this.listViewHistory.Name = "listViewHistory";
-            this.listViewHistory.Size = new System.Drawing.Size(1056, 396);
-            this.listViewHistory.TabIndex = 0;
-            this.listViewHistory.UseCompatibleStateImageBehavior = false;
-            this.listViewHistory.View = System.Windows.Forms.View.Details;
+            this.listViewMedicines.FullRowSelect = true;
+            this.listViewMedicines.GridLines = true;
+            this.listViewMedicines.Location = new System.Drawing.Point(12, 70);
+            this.listViewMedicines.Name = "listViewMedicines";
+            this.listViewMedicines.Size = new System.Drawing.Size(776, 368);
+            this.listViewMedicines.TabIndex = 0;
+            this.listViewMedicines.UseCompatibleStateImageBehavior = false;
+            this.listViewMedicines.View = System.Windows.Forms.View.Details;
+            this.listViewMedicines.SelectedIndexChanged += new System.EventHandler(this.listViewMedicines_SelectedIndexChanged);
             // 
             // buttonReturn
             // 
@@ -52,23 +54,23 @@
             this.buttonReturn.UseVisualStyleBackColor = true;
             this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
             // 
-            // employeHistory
+            // employeChooseMedicine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 450);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonReturn);
-            this.Controls.Add(this.listViewHistory);
-            this.Name = "employeHistory";
-            this.Text = "employeHistory";
-            this.Load += new System.EventHandler(this.employeHistory_Load);
+            this.Controls.Add(this.listViewMedicines);
+            this.Name = "employeChooseMedicine";
+            this.Text = "employeChooseMedicine";
+            this.Load += new System.EventHandler(this.employeChooseMedicine_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListView listViewHistory;
+        private System.Windows.Forms.ListView listViewMedicines;
         private System.Windows.Forms.Button buttonReturn;
     }
 }

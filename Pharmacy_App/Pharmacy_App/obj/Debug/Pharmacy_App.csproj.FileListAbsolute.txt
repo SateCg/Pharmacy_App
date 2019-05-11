@@ -120,3 +120,4 @@ C:\Users\alimy\Desktop\Burak\Pharmacy_App-master\Pharmacy_App\Pharmacy_App\obj\D
 C:\Users\alimy\Desktop\Burak\Pharmacy_App-master\Pharmacy_App\Pharmacy_App\obj\Debug\Pharmacy_App.csproj.CopyComplete
 C:\Users\alimy\Desktop\Burak\Pharmacy_App-master\Pharmacy_App\Pharmacy_App\obj\Debug\Pharmacy_App.exe
 C:\Users\alimy\Desktop\Burak\Pharmacy_App-master\Pharmacy_App\Pharmacy_App\obj\Debug\Pharmacy_App.pdb
+C:\Users\Sateri\Desktop\Pharmacy_App\Pharmacy_App\Pharmacy_App\obj\Debug\Pharmacy_App.employeChooseMedicine.resources

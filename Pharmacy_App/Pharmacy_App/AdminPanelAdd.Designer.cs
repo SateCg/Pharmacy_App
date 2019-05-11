@@ -55,12 +55,16 @@
             this.listViewTemporaryMedicines = new System.Windows.Forms.ListView();
             this.label8 = new System.Windows.Forms.Label();
             this.listViewMedicines = new System.Windows.Forms.ListView();
+            this.labelBarcodeNo = new System.Windows.Forms.Label();
+            this.textBoxBarcodeNo = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxBarcodeNo);
+            this.groupBox1.Controls.Add(this.labelBarcodeNo);
             this.groupBox1.Controls.Add(this.labelClickMessage);
             this.groupBox1.Controls.Add(this.pictureBoxImage);
             this.groupBox1.Controls.Add(this.label5);
@@ -336,6 +340,22 @@
             this.listViewMedicines.UseCompatibleStateImageBehavior = false;
             this.listViewMedicines.View = System.Windows.Forms.View.Details;
             // 
+            // labelBarcodeNo
+            // 
+            this.labelBarcodeNo.AutoSize = true;
+            this.labelBarcodeNo.Location = new System.Drawing.Point(6, 99);
+            this.labelBarcodeNo.Name = "labelBarcodeNo";
+            this.labelBarcodeNo.Size = new System.Drawing.Size(64, 13);
+            this.labelBarcodeNo.TabIndex = 8;
+            this.labelBarcodeNo.Text = "Barcode No";
+            // 
+            // textBoxBarcodeNo
+            // 
+            this.textBoxBarcodeNo.Location = new System.Drawing.Point(76, 96);
+            this.textBoxBarcodeNo.Name = "textBoxBarcodeNo";
+            this.textBoxBarcodeNo.Size = new System.Drawing.Size(219, 20);
+            this.textBoxBarcodeNo.TabIndex = 48;
+            // 
             // AdminPanelAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,5 +405,7 @@
         private System.Windows.Forms.Label labelClickMessage;
         private System.Windows.Forms.PictureBox pictureBoxImage;
         private System.Windows.Forms.ListView listViewMedicines;
+        private System.Windows.Forms.TextBox textBoxBarcodeNo;
+        private System.Windows.Forms.Label labelBarcodeNo;
     }
 }

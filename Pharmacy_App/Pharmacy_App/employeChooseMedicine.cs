@@ -9,58 +9,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
-using System.IO;
 
 namespace Pharmacy_App
 {
-    public partial class AdminPanel : Form
+    public partial class employeChooseMedicine : Form
     {
 
         List<medicineRecords> medicineRecordList = new List<medicineRecords>();// adding class
-        string xmlFileLocation = @"C:/Users/Public/PharmacyAppData/medicineInfo.xml";// adding file location
+        string xmlFileLocation = @"C:/Users/Public/PharmacyAppData/medicineInfo.xml";// xml file location
 
         XmlNodeList imagePathList;
 
-        public AdminPanel()
+        public employeChooseMedicine()
         {
             InitializeComponent();
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
+        private void buttonReturn_Click(object sender, EventArgs e)
         {
-            AdminPanelAdd adminPanelAdd = new AdminPanelAdd();
-            adminPanelAdd.Show();
+            employePanel EP = new employePanel();
+            EP.Show();
             this.Close();
-        }
-
-        private void buttonDelete_Click(object sender, EventArgs e)
-        {
-            
-            AdminPanelDelete adminPanelDelete = new AdminPanelDelete();
-            adminPanelDelete.Show();
-            this.Close();
-        }
-
-        private void buttonUpdate_Click(object sender, EventArgs e)
-        {
-            AdminPanelUpdate adminPanelUpdate = new AdminPanelUpdate();
-            adminPanelUpdate.Show();
-            this.Close();
-        }
-
-        private void buttonHistory_Click(object sender, EventArgs e)
-        {
-            AdminPanelHistory adminPanelHistory = new AdminPanelHistory();
-            adminPanelHistory.Show();
-            this.Close();
-        }
-
-        public void Form_Reload(object sender, EventArgs e)
-        {
-            listViewMedicines.Items.Clear();
-            listViewMedicines.Columns.Clear();
-            medicineRecordList.Clear();
-            AdminPanel_Load(sender, e);
         }
 
         public void updateViewList() // funchtion for get values from xml to view list
@@ -82,7 +51,18 @@ namespace Pharmacy_App
 
             //----------------------------------------------------------------------------
 
-            // getting elements in xml to the temperory list. Each tag have its own list. 
+
+            // To get every node from xml file to list view ;
+            // First get items from xml file to XmlNodeList
+            // Then assing information from XmlNodeList to
+            // user defined list class. Get information from list 
+            // to listViewMedicines
+
+
+
+
+            // Getting elements from xml file to the temperory list. 
+            // Each tag have its own list. 
             XmlDocument medicines = new XmlDocument();
             medicines.Load(xmlFileLocation);
 
@@ -128,7 +108,6 @@ namespace Pharmacy_App
 
             }
 
-
             for (var i = 0; i < medicineRecordList.Count; i++)// Adding medicineRecords list's elements to the list view 
             {
                 listViewMedicines.SmallImageList = img;
@@ -164,52 +143,42 @@ namespace Pharmacy_App
 
 
             }
-
         }
-
-        private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void AdminPanel_Load(object sender, EventArgs e)
+            private void employeChooseMedicine_Load(object sender, EventArgs e)
         {
             //FULL SCREEN
-            FormBorderStyle = FormBorderStyle.None;// removing application borders
-            WindowState = FormWindowState.Maximized;// maximazing application window
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
             //FULL SCREEN
 
             updateViewList();
         }
 
-        private void buttonRefresh_Click(object sender, EventArgs e)
-        {
-            Form_Reload(sender,e);
-            
-        }
-
         private void listViewMedicines_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int medicineNumber = (int.Parse(listViewMedicines.FocusedItem.SubItems[0].Text.ToString()) - 1);
+            employePanel EP = new employePanel();
+            EP.Show();
 
-            //getting image from xml file
+            EP.xmlName = listViewMedicines.FocusedItem.SubItems[1].Text.ToString();
+            EP.xmlCategory = listViewMedicines.FocusedItem.SubItems[2].Text.ToString();
+            EP.xmlMg = double.Parse(listViewMedicines.FocusedItem.SubItems[3].Text.ToString());
+            EP.xmlExperationDate = listViewMedicines.FocusedItem.SubItems[4].Text.ToString();
+            EP.xmlAmount = int.Parse(listViewMedicines.FocusedItem.SubItems[5].Text.ToString());
+            EP.xmlCost = double.Parse(listViewMedicines.FocusedItem.SubItems[6].Text.ToString());
+            EP.xmlPrice = double.Parse(listViewMedicines.FocusedItem.SubItems[7].Text.ToString());
+            EP.xmlStatus = listViewMedicines.FocusedItem.SubItems[8].Text.ToString();
+            EP.xmlBarcodeNo = ulong.Parse(listViewMedicines.FocusedItem.SubItems[9].Text.ToString());
 
-            pictureBoxImage.Image = Image.FromFile(imagePathList[medicineNumber].InnerXml.ToString());
-            pictureBoxImage.SizeMode = PictureBoxSizeMode.StretchImage;
-            //---------------------------
-        }
+            EP.labelMedicineName.Text = listViewMedicines.FocusedItem.SubItems[1].Text.ToString();
+            EP.labelPrice.Text = listViewMedicines.FocusedItem.SubItems[7].Text.ToString();
+            EP.textBoxBarcodeNo.Text = listViewMedicines.FocusedItem.SubItems[9].Text.ToString();
+            EP.comboBoxAmount.Items.Clear();
+            for (int i = 1; i <= int.Parse(listViewMedicines.FocusedItem.SubItems[5].Text.ToString()); i++)
+            {
+                EP.comboBoxAmount.Items.Add(i);
+            }
 
-        private void buttonAddAdmin_Click(object sender, EventArgs e)
-        {
-            AdminPanelAddNewAdmin APA = new AdminPanelAddNewAdmin();
-            APA.Show();
-            this.Close();
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form1 LG = new Form1();
-            LG.Show();
             this.Close();
         }
     }

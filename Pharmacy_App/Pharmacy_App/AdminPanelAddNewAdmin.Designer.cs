@@ -70,7 +70,7 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(401, 121);
+            this.buttonAdd.Location = new System.Drawing.Point(395, 126);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 23);
             this.buttonAdd.TabIndex = 2;
@@ -113,7 +113,7 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(482, 121);
+            this.buttonDelete.Location = new System.Drawing.Point(182, 89);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(75, 23);
             this.buttonDelete.TabIndex = 7;
@@ -125,6 +125,7 @@
             // 
             this.groupBox2.Controls.Add(this.buttonUpdate);
             this.groupBox2.Controls.Add(this.textBoxUpdatePassword);
+            this.groupBox2.Controls.Add(this.buttonDelete);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.labelUsername);
             this.groupBox2.Controls.Add(this.label3);
@@ -195,7 +196,6 @@
             this.ClientSize = new System.Drawing.Size(875, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);

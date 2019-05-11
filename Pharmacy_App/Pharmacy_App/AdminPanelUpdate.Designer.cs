@@ -53,6 +53,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.labelImagePath = new System.Windows.Forms.Label();
+            this.labelBarcodeNo = new System.Windows.Forms.Label();
+            this.textBoxBarcodeNo = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +73,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBoxBarcodeNo);
+            this.groupBox2.Controls.Add(this.labelBarcodeNo);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.comboBoxCategory);
             this.groupBox2.Controls.Add(this.label8);
@@ -313,6 +317,22 @@
             this.labelImagePath.Size = new System.Drawing.Size(0, 13);
             this.labelImagePath.TabIndex = 47;
             // 
+            // labelBarcodeNo
+            // 
+            this.labelBarcodeNo.AutoSize = true;
+            this.labelBarcodeNo.Location = new System.Drawing.Point(6, 91);
+            this.labelBarcodeNo.Name = "labelBarcodeNo";
+            this.labelBarcodeNo.Size = new System.Drawing.Size(64, 13);
+            this.labelBarcodeNo.TabIndex = 48;
+            this.labelBarcodeNo.Text = "Barcode No";
+            // 
+            // textBoxBarcodeNo
+            // 
+            this.textBoxBarcodeNo.Location = new System.Drawing.Point(76, 88);
+            this.textBoxBarcodeNo.Name = "textBoxBarcodeNo";
+            this.textBoxBarcodeNo.Size = new System.Drawing.Size(191, 20);
+            this.textBoxBarcodeNo.TabIndex = 49;
+            // 
             // AdminPanelUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,5 +380,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.PictureBox pictureBoxImage;
         private System.Windows.Forms.Label labelImagePath;
+        private System.Windows.Forms.TextBox textBoxBarcodeNo;
+        private System.Windows.Forms.Label labelBarcodeNo;
     }
 }

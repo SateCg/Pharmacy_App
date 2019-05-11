@@ -62,10 +62,10 @@ namespace Pharmacy_App
                 {
                     customerName = customerNameList[i].InnerXml,
                     medicineName = medicineNameList[i].InnerXml,
-                    mg = double.Parse(mgList[i].InnerXml),
+                    mg = XmlConvert.ToDouble(mgList[i].InnerXml),
                     amount = int.Parse(amountList[i].InnerXml),
                     recipe = recipeList[i].InnerXml,
-                    totalPrice = double.Parse(totalPriceList[i].InnerXml),
+                    totalPrice = XmlConvert.ToDouble(totalPriceList[i].InnerXml),
                     sellDate = sellDateList[i].InnerXml,
                 });
 
@@ -109,6 +109,13 @@ namespace Pharmacy_App
             //FULL SCREEN
 
             updateViewList();
+        }
+
+        private void buttonReturn_Click(object sender, EventArgs e)
+        {
+            employePanel EP = new employePanel();
+            EP.Show();
+            this.Close();
         }
     }
 }
