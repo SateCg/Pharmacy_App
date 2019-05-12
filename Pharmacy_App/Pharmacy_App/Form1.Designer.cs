@@ -120,7 +120,7 @@
             // buttonClose
             // 
             this.buttonClose.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonClose.Location = new System.Drawing.Point(764, 12);
+            this.buttonClose.Location = new System.Drawing.Point(1199, 12);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(55, 29);
             this.buttonClose.TabIndex = 77;
@@ -132,7 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 493);
+            this.ClientSize = new System.Drawing.Size(1279, 608);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelErrorMessage);

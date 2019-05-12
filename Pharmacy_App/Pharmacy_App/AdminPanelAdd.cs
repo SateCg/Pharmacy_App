@@ -371,7 +371,7 @@ namespace Pharmacy_App
                     //sql*
                     conn.Open();
                     cmd.Connection = conn;
-                    cmd.CommandText = "insert into Medicines(Name, Category, Milligram, ExperationDate, Amount, Cost, Price, Status, UpdatedDate, ImageFolder) Values('" + textBoxName.Text + "', '" + comboBoxCategory.Text + "', '" + textBoxMg.Text + "', '" + dateTimePickerExpirationDate.Text + "', '" + textBoxAmount.Text + "', '" + textBoxCost.Text + "', '" + textBoxPrice.Text + "', '" + status.ToString() + "', '" + System.DateTime.Now + "', '" + imageFolderPath.ToString() + "')";
+                    cmd.CommandText = "insert into Medicines(Name, Category, Milligram, ExperationDate, Amount, Cost, Price, Status, UpdatedDate, ImageFolder) Values('" + name + "', '" + category + "', '" + mg + "', '" + experationDate + "', '" + amount + "', '" + cost + "', '" + price + "', '" + status + "', '" + System.DateTime.Now + "', '" + (imageCopyName + "/" + imageCopyName) + "')";
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     //*sql
